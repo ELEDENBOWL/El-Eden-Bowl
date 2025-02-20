@@ -1,0 +1,44 @@
+.procesos-main{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "hero hero hero"
+        ". elaboracion ."
+        ". matprima .";
+
+    #elaboracion{
+        grid-area: elaboracion;
+        .right-fusion-paragraph-div{
+            @extend %flex-center;
+            img{
+                max-width: 60%;
+            }
+            .fusion-paragrapfh-div{
+                text-align: center;
+                p{
+                    @include paragraphs(Mulish, 19px, left);
+                    margin: 50px;
+                }
+            }
+        }
+    }
+
+    #materia-prima{
+        grid-area: matprima;
+        .left-fusion-paragraph-div{
+            @extend %flex-center-reverse;
+            align-items: center;
+            img{
+                max-width: 60%;
+            }
+            .fusion-paragrapfh-div{
+                text-align: center;
+                p{
+                    @include paragraphs(Mulish, 19px, left);
+                    margin: 50px;
+                }
+            }
+        }
+    }
+}

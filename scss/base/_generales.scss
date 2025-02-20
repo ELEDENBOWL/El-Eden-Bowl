@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Bilbo&family=Merriweather:ital@0;1&family=Mulish:wght@200;300;500&family=Signika+Negative:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
+section {
+    margin-bottom: 100px;
+    .title-div {
+        text-align: center;
+        padding: 30px;
+        h2 {
+            text-align: center;
+            font-family: Merriweather;
+            font-size: 30px;
+            font-weight: 200;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            font-family: Mulish;
+            font-size: 30px;
+            font-weight: 200;
+            margin-bottom: 30px;
+            color: $tertiary-color;
+        }
+    }
+}
+
+.hero {
+    grid-area: hero;
+    .hero-div {
+        padding-left: 15%;
+        @extend %flex-between;
+
+        .cel-index-img {
+            position: absolute;
+            visibility: hidden;
+            width: 50%;
+        }
+
+        div {
+            h1 {
+                font-family: Mulish;
+                font-size: 50px;
+                font-weight: 200;
+                color: $secondary-color;
+            }
+
+            h2 {
+                font-family: Bilbo;
+                font-weight: 400;
+                font-size: 70px;
+            }
+        }
+
+        .web-index-img {
+            width: 50%;
+        }
+    }
+}
+
+// Clases iconos importados
+.bxl-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.bxl-facebook {
+    background: #3b5998;
+}
+
+.bxl-whatsapp {
+    background: #00e676;
+}
+
+.bx-phone-call,
+.bx-envelope,
+.bx-map-pin {
+    color: $secondary-color;
+}  
+
+// Clases boostrap
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.carousel-control-prev-icon {
+    background-color: $primary-color;
+}
+
+.carousel-control-next-icon {
+    background-color: $primary-color;
+}
+
+.carousel-item-cards {
+    @extend %flex-center;
+    padding: 2% 10% 2% 10%;
+    text-align: center;
+}
+
+.boton {
+    @extend %boton;
+    padding: 4%;
+    &:hover {
+        background: nth($white-color, 3);
+        color: $primary-color;
+    }
+}
+
+.card{
+    width: 239px;
+    height: 400px;
+    margin: 5px;
+}
+
+.carousel-indicators{
+display: none;
+}
+
+// Animaciones de entrada de contenido
+// Terminar de pulir antes de la entrega final y darle un efecto similar a la herosection
+.entrance-left{
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: in-left;
+    animation-range: entry 5% cover 30%;
+    animation-fill-mode:both;
+}
+.entrance-right{
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: in-right;
+    animation-range: entry 5% cover 50%;
+    animation-fill-mode:both;
+}
+
+@keyframes in-left{
+    from {
+        opacity: 0;
+        transform: translatex(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+@keyframes in-right{
+    from {
+        opacity: 0;
+        transform: translatex(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+@keyframes in-right-small{
+    from {
+        opacity: 0;
+        transform: translatex(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translatex(0);
+    }
+}

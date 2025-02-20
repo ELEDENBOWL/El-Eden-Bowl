@@ -1,0 +1,68 @@
+.nosotros-main{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "hero hero hero"
+        ". historia ."
+        "equipo equipo equipo"
+        ". pip .";
+        
+    #historia{
+        grid-area: historia;
+        div{
+            @extend %flex-column;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            p{
+                @include paragraphs(Mulish, 20px, center);
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    #equipo{
+        grid-area: equipo;
+        .large-content-div{
+            @extend %flex-column;
+            background-image: url("../img/fondo-verduras.jpg");
+            padding-bottom: 100px;
+            div{
+                @extend %flex-center;
+                width: 70%;
+                img{
+                    max-width: 62%;
+                    box-shadow: 5px 5px 10px 1px nth($black-color, 2);
+                }
+                div{
+                    p{
+                        @include paragraphs(Mulish, 20px, none);
+                        text-decoration: none;
+                        font-weight: 500;
+                        color: nth($black-color, 3);
+                        background-color: #ffffff96;
+                        padding: 20px;
+                        width: 600px;
+                        position: relative;
+                        left: -30%;
+                        box-shadow: 5px 5px 10px 1px nth($black-color, 2);
+                    }
+                }
+            }
+        }
+    }
+
+    .pip-section{
+        grid-area: pip;
+        div{
+            @extend %flex-column;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            p{
+                @include paragraphs(Mulish, 20px, center);
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,127 @@
+.contacto-main{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "contacto contacto contacto"
+        "mapa mapa mapa"
+        ". comercios .";
+    .contact-section{
+        background-image: url("../img/salad-banner3.jpg");
+        background-size: cover;
+        padding: 5%;
+        grid-area: contacto;
+        div{
+            form{
+                position: relative;
+                left: 10%;
+                font-weight: 200;
+                width: 500px;
+                h4{
+                    font-family: Merriweather;
+                    margin-bottom: 7px;
+                }
+                .input-div{
+                    position: relative;
+                    margin: 15px;
+                    input{
+                        font-family: inherit;
+                        color: nth($black-color, 3);
+                        padding: 10px;
+                        border: none;
+                        border-radius: 4px;
+                        outline: 2px solid $secondary-color;
+                        background-color: transparent;
+                        transition: outline-color 500ms;
+                        width: 450px;
+                        &:focus+label,
+                        &:valid+label {
+                            padding-inline: 5px;
+                            translate: 10px -10px;
+                            scale: 0.8;
+                            background-color: nth($white-color, 3 );
+                            color: $secondary-color;
+                            font-weight: 700;
+                        }
+                        &:is(:focus, :valid) {
+                            border: 5px solid $secondary-color;
+                        }                                              
+                    }
+                    label{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        translate: 10px 10px;
+                        color: black;
+                        transition: translate 500ms, scale 500ms;
+                    }
+                }
+                .textarea-div{
+                    position: relative;
+                    margin: 15px;
+                    textarea{
+                        font: inherit;
+                        color: nth($black-color, 3);
+                        padding: 10px;
+                        border: none;
+                        border-radius: 4px;
+                        outline: 2px double $secondary-color;
+                        background-color: transparent;
+                        transition: outline-color 500ms;
+                        width: 450px;
+                        &:focus+label,
+                        &:valid+label {
+                            padding-inline: 5px;
+                            translate: 10px -10px;
+                            scale: 0.8;
+                            background-color: nth($white-color, 3);
+                            color: $secondary-color;
+                            font-weight: 700;
+                        }
+                        
+                        &:is(:focus, :valid) {
+                            border: 5px solid $secondary-color;
+                        }                      
+                    }
+                    label{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        translate: 10px 10px;
+                        color: nth($black-color, 3);
+                        transition: translate 500ms, scale 500ms;
+                    }
+                }
+                button{
+                    @extend %boton;
+                    padding: 15px;
+                    &:hover {
+                        background: nth($white-color, 3);
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+    .map-section{
+        div{
+            background-color: nth($white-color, 3);
+        }
+        grid-area: mapa;
+        background-image: url("../img/fondo-verduras.jpg");
+        margin-bottom: 50px;
+        iframe{
+            box-shadow: 5px 5px 10px 1px nth($black-color, 2);
+        }
+    }
+    .comercios-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-area: comercios;
+        .carousel-comercios-div {
+            max-width: 40%;
+        }
+    }
+}

@@ -1,0 +1,137 @@
+header{
+    position: fixed;
+    width: 100%;
+    background-color: $transparent-primary-color;
+    z-index: 1;
+    box-shadow: 2px 2px 10px 1px nth($black-color, 1);
+    .celular-navbar{
+        background-color: $primary-color;
+        color: nth($white-color, 3);
+        height: 70px;
+        padding: 10px 12px;
+        display: none;
+        a{
+            img{
+                height: 100%;
+            }
+        }
+        input{
+            position: absolute;
+            top: 5px;
+            right: 12px;
+            cursor: pointer;
+            width: 34px;
+            height: 34px;
+            opacity: 0;
+            &:checked~.bx-menu {
+                display: none;
+            }
+            &:checked~.bx-menu-alt-right {
+                display: block;
+            }
+            &:checked~.menu {
+                top: 70px;
+                z-index: 0;
+            }
+        }
+        i{
+            position: absolute;
+            top: 5px;
+            right: 12px;
+            cursor: pointer;
+            width: 34px;
+            height: 34px;
+            pointer-events: none;
+            font-size: 35px;
+            padding-top: 10px;
+        }
+        ul{
+            width: 100%;
+            position: absolute;
+            top: -200px;
+            z-index: -1;
+            left: 0;
+            transition: 300ms;
+            padding-left: 0;
+            li{
+                list-style: none;
+                a{
+                    text-align: center;
+                    background-color: $transparent-primary-color;
+                    text-decoration: none;
+                    color: nth($white-color, 3);
+                    display: block;
+                    padding: 10px;
+                    &:hover {
+                        background-color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+    .web-navbar{
+        ul{
+            padding: 0;
+            height: 90px;
+            @extend %flex-center;
+            margin-bottom: 0;
+            .navbar-left{
+                display: flex;
+                padding: 1px 40px 10px 0;
+                border-bottom: 1px solid nth($white-color, 1);
+                li{
+                    list-style: none;
+                    a{
+                        @include paragraphs(Mulish, 20px, none);
+                        text-decoration: none;
+                        font-weight: 500;
+                        color: nth($white-color, 3);
+                        transition: 250ms;
+                        padding-bottom: 10px;
+                        margin-right: 30px;
+                        &:hover {
+                            color: $secondary-color;
+                            /* ! revisar por que en firefox se ve ligeramente diferente que en chrome, opera y brave */
+                            border-bottom: 1px solid $secondary-color;
+                        }
+                    }
+                }
+            }
+            .navbar-right{
+                display: flex;
+                padding: 1px 0 10px 40px;
+                border-bottom: 1px solid #ffffff71;
+                li{
+                    list-style: none;
+                    a{
+                        @include paragraphs(Mulish, 20px, none);
+                        text-decoration: none;
+                        font-weight: 500;
+                        color: nth($white-color, 3);
+                        transition: 250ms;
+                        padding-bottom: 10px;
+                        padding-left: 30px;
+                        &:hover {
+                            color: $secondary-color;
+                            /* ! revisar por que en firefox se ve ligeramente diferente que en chrome, opera y brave */
+                            border-bottom: 1px solid $secondary-color;
+                        }
+                    }
+                }
+            }
+            li{
+                list-style: none;
+                a{
+                    img{
+                        height: 50px;
+                        margin: 2px 40px 3px 40px;
+                        transition: 250ms;
+                        &:hover {
+                            scale: 130%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
